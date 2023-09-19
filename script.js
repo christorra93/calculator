@@ -14,10 +14,24 @@ function divi(a,b){
     return a/b;
 }
 
-let a = 10;
-let b = 3;
+function operate(a,b,operator){
+    switch(operator){
+        case '+':
+            console.log(add(a,b));
+            break;
+        case '-':
+            console.log(sub(a,b));
+            break;
+        case '*':
+            console.log(mult(a,b));
+            break;
+        case '/':
+            console.log(divi(a,b));
+            break;
+    }
+}
+let a = +prompt('first number','0');
+let operator = prompt('operation?','+');
+let b = +prompt('second number','0');
 
-console.log(add(a,b));
-console.log(sub(a,b));
-console.log(mult(a,b));
-console.log(divi(a,b));
+operate(a,b,operator);
