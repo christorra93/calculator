@@ -66,10 +66,12 @@ function btnClick(e){
                 num1 = +result.textContent;
                 operator = e.target.textContent;
                 newNum = true;
-            } else{
+            } else if(!newNum){
                 num2 = +result.textContent;
                 newNum = true;
                 operate(num1,num2,operator);
+                operator = e.target.textContent;
+            } else {
                 operator = e.target.textContent;
             }
             break;
@@ -87,6 +89,12 @@ function btnClick(e){
         case 'Clear':
             clearDisplay();
             break;
+        case '+/-':
+            if(result.textContent[0] === '-'){
+                result.textContent = result.textContent.slice(1);
+            } else{
+                result.textContent = '-' + result.textContent;
+            }
     }
 }
 function clearDisplay(){
