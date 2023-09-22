@@ -1,0 +1,30 @@
+#calculator{
+    height: 500px;
+    width: 400px;
+    margin: 10px auto;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+#result{
+    height: 40px;
+    border: 1px solid black;
+    margin: 8px;
+    font-size: 32px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-align: right;
+    border-radius: 5px;
+}
+
+#buttons{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1px;
+    padding: 10px;
+}
+
+button{
+    height: 80px;
+    width: 80px;
+}

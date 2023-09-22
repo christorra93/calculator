@@ -30,8 +30,8 @@ function operate(a,b,operator){
             break;
     }
 }
-let a = +prompt('first number','0');
-let operator = prompt('operation?','+');
-let b = +prompt('second number','0');
+let a;
+let operator;
+let b;
 
-operate(a,b,operator);
+// operate(a,b,operator);
