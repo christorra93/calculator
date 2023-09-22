@@ -95,8 +95,16 @@ function btnClick(e){
         case '+/-':
             if(result.textContent[0] === '-'){
                 result.textContent = result.textContent.slice(1);
+
+                if(newNum){
+                    num1 = +result.textContent;
+                }
             } else{
                 result.textContent = '-' + result.textContent;
+
+                if(newNum){
+                    num1 = +result.textContent;
+                }
             }
             break;
         case '.':
