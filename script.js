@@ -18,19 +18,19 @@ function operate(a,b,operator){
     switch(operator){
         case '+':
             num1 = add(a,b);
-            result.textContent = num1;
+            result.textContent = (num1.toString().includes('.'))?num1.toFixed(2):num1;
             break;
         case '-':
             num1 = substract(a,b);
-            result.textContent = num1;
+            result.textContent = (num1.toString().includes('.'))?num1.toFixed(2):num1;
             break;
         case '*':
             num1 = multiply(a,b);
-            result.textContent = num1;
+            result.textContent = (num1.toString().includes('.'))?num1.toFixed(2):num1;
             break;
         case '/':
             num1 = divide(a,b);
-            result.textContent = num1;
+            result.textContent = (num1.toString().includes('.'))?num1.toFixed(2):num1;
             break;
     }
 }
@@ -67,10 +67,16 @@ function btnClick(e){
                 operate(num1,num2,operator);
                 operator = e.target.textContent;
             }
+            break;
         case '=':
-            if(operator){
-                num2 = +result.textContent;
-                operate(num1,num2,operator);
+            if (operator) {
+                if(num2){
+                    operate(num1,num2,operator);
+                }else{
+                    num2 = +result.textContent;
+                    newNum = true;
+                    operate(num1,num2,operator);
+                }
             }
             break;
         case 'Clear':
