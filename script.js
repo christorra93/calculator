@@ -24,7 +24,7 @@ function operate(a,b,operator){
             num1 = substract(a,b);
             result.textContent = (num1.toString().includes('.'))?num1.toFixed(2):num1;
             break;
-        case '*':
+        case 'x':
             num1 = multiply(a,b);
             result.textContent = (num1.toString().includes('.'))?num1.toFixed(2):num1;
             break;
@@ -59,7 +59,7 @@ function btnClick(e){
             result.textContent += e.target.textContent;
             break;
         case '+':
-        case '*':
+        case 'x':
         case '/':
         case '-':
             if(!num1){
@@ -95,6 +95,12 @@ function btnClick(e){
             } else{
                 result.textContent = '-' + result.textContent;
             }
+            break;
+        case '.':
+            if(!result.textContent.includes('.')){
+                result.textContent += e.target.textContent;
+            }
+            break;
     }
 }
 function clearDisplay(){
