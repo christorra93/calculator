@@ -29,6 +29,11 @@ function operate(a,b,operator){
             result.textContent = (num1.toString().includes('.'))?num1.toFixed(2):num1;
             break;
         case '/':
+            if(b == 0){
+                alert('Congratulations! You broke it!');
+                clearDisplay();
+                break;
+            }
             num1 = divide(a,b);
             result.textContent = (num1.toString().includes('.'))?num1.toFixed(2):num1;
             break;
@@ -70,7 +75,7 @@ function btnClick(e){
             break;
         case '=':
             if (operator) {
-                if(num2){
+                if(num2 !== null && newNum){
                     operate(num1,num2,operator);
                 }else{
                     num2 = +result.textContent;
@@ -80,16 +85,20 @@ function btnClick(e){
             }
             break;
         case 'Clear':
-            result.textContent = '';
-            num1 = 0;
-            num2 = 0;
-            operator = null;
+            clearDisplay();
             break;
     }
 }
-let num1;
-let num2;
-let operator;
+function clearDisplay(){
+    result.textContent = '';
+    num1 = null;
+    num2 = null;
+    operator = null;
+}
+
+let num1 = null;
+let num2 = null;
+let operator = null;
 let newNum = false;
 
 // operate(a,b,operator);
