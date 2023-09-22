@@ -2,31 +2,35 @@ function add(a,b){
     return a+b;
 }
 
-function sub(a,b){
+function substract(a,b){
     return a-b;
 }
 
-function mult(a,b){
+function multiply(a,b){
     return a*b;
 }
 
-function divi(a,b){
+function divide(a,b){
     return a/b;
 }
 
 function operate(a,b,operator){
     switch(operator){
         case '+':
-            console.log(add(a,b));
+            num1 = add(a,b);
+            result.textContent = num1;
             break;
         case '-':
-            console.log(sub(a,b));
+            num1 = substract(a,b);
+            result.textContent = num1;
             break;
         case '*':
-            console.log(mult(a,b));
+            num1 = multiply(a,b);
+            result.textContent = num1;
             break;
         case '/':
-            console.log(divi(a,b));
+            num1 = divide(a,b);
+            result.textContent = num1;
             break;
     }
 }
@@ -45,10 +49,34 @@ function btnClick(e){
         case '9':
             result.textContent += e.target.textContent;
             break;
+        case '+':
+        case '*':
+        case '/':
+        case '-':
+            if(!num1){
+                num1 = +result.textContent;
+                result.textContent = '';
+                operator = e.target.textContent;
+            } else if(operator){
+                num2 = +result.textContent;
+            }
+            break;
+        case '=':
+            if(operator){
+                num2 = +result.textContent;
+                operate(num1,num2,operator);
+            }
+            break;
+        case 'Clear':
+            result.textContent = '';
+            num1 = 0;
+            num2 = 0;
+            operator = null;
+            break;
     }
 }
-let a;
-let b;
+let num1;
+let num2;
 let operator;
 
 // operate(a,b,operator);
