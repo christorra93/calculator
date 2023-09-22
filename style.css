@@ -43,6 +43,8 @@ button{
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     background-color: rgb(83, 170, 170);
+    border: 1px solid black;
+    border-radius: 3px;
 }
 
 button:hover{
