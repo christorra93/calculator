@@ -47,6 +47,10 @@ function btnClick(e){
         case '7':
         case '8':
         case '9':
+            if(newNum){
+                result.textContent = '';
+                newNum = false;
+            }
             result.textContent += e.target.textContent;
             break;
         case '+':
@@ -55,12 +59,14 @@ function btnClick(e){
         case '-':
             if(!num1){
                 num1 = +result.textContent;
-                result.textContent = '';
                 operator = e.target.textContent;
-            } else if(operator){
+                newNum = true;
+            } else{
                 num2 = +result.textContent;
+                newNum = true;
+                operate(num1,num2,operator);
+                operator = e.target.textContent;
             }
-            break;
         case '=':
             if(operator){
                 num2 = +result.textContent;
@@ -78,6 +84,7 @@ function btnClick(e){
 let num1;
 let num2;
 let operator;
+let newNum = false;
 
 // operate(a,b,operator);
 
