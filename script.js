@@ -30,8 +30,30 @@ function operate(a,b,operator){
             break;
     }
 }
+
+function btnClick(e){
+    switch(e.target.textContent){
+        case '0':
+        case '1':
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+            result.textContent += e.target.textContent;
+            break;
+    }
+}
 let a;
-let operator;
 let b;
+let operator;
 
 // operate(a,b,operator);
+
+const result = document.querySelector('#result');
+const buttons = document.querySelector('#buttons');
+
+buttons.addEventListener('click',btnClick);
