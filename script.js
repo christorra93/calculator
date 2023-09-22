@@ -86,8 +86,11 @@ function btnClick(e){
                 }
             }
             break;
-        case 'Clear':
+        case 'AC':
             clearDisplay();
+            break;
+        case 'C':
+            result.textContent = result.textContent.slice(0,-1);
             break;
         case '+/-':
             if(result.textContent[0] === '-'){
