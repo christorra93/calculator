@@ -2,14 +2,14 @@
     height: 500px;
     width: 400px;
     margin: 10px auto;
-    border: 1px solid black;
+    border: 5px solid lightgrey;
     border-radius: 5px;
 }
 
 #result{
     height: 40px;
-    border: 1px solid black;
-    margin: 8px;
+    border: 3px solid lightgrey;
+    margin: 5px;
     font-size: 32px;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
@@ -20,11 +20,18 @@
 #buttons{
     display: flex;
     flex-wrap: wrap;
-    gap: 1px;
-    padding: 10px;
+    padding: 5px;
+}
+
+#buttons button:first-child{
+    width: 194px;
+    background-color: tomato;
 }
 
 button{
-    height: 80px;
-    width: 80px;
+    height: 87px;
+    width: 97px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
